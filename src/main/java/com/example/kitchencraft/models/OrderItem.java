@@ -13,18 +13,17 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Many order items belong to one order
+    // Many OrderItems belong to one Order
     @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "order_id")
     private Order order;
 
-    // Many order items refer to one product
+    // Many OrderItems refer to one Product
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id")
     private Product product;
 
     private int quantity;
 
-    private double price;  // Price per unit or total for this item
+    private double price;
 }
-

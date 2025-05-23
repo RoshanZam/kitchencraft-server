@@ -11,21 +11,21 @@ import java.util.List;
 public class OrderItemService {
 
     @Autowired
-    private OrderItemRepository OrderItemRepository;
+    private OrderItemRepository orderItemRepository;
 
     public List<OrderItem> getAllOrderItems() {
-        return OrderItemRepository.findAll();
+        return orderItemRepository.findAll();
     }
 
     public OrderItem getOrderItemById(Long id) {
-        return OrderItemRepository.findById(id).orElse(null);
+        return orderItemRepository.findById(id).orElse(null);
     }
 
-    public OrderItem saveOrderItem(OrderItem OrderItem) {
-        return OrderItemRepository.save(OrderItem);
+    public OrderItem saveOrderItem(OrderItem orderItem) {
+        return orderItemRepository.save(orderItem);
     }
 
     public void deleteOrderItem(Long id) {
-        OrderItemRepository.deleteById(id);
+        orderItemRepository.deleteById(id);
     }
 }
